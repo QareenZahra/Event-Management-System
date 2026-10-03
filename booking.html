@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings | Eventora</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/booking.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg eventora-navbar">
+    <div class="container">
+
+        <a class="navbar-brand eventora-logo" href="index.html">
+            ✦ EVENTORA
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav eventora-links">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="events.html">Events</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="booking.html">My Bookings</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
+            </ul>
+
+            <div class="navbar-buttons">
+
+                <a href="login.html" class="login-btn">
+                    Login
+                </a>
+
+                <a href="register.html" class="register-btn">
+                    Register
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="booking-header">
+
+    <div class="container text-center">
+
+        <span class="section-tag">🎟️ YOUR EVENTS</span>
+
+        <h1>My Bookings</h1>
+
+        <p>
+            View and manage the events you have registered for.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOKINGS ================= -->
+
+<section class="bookings-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Upcoming Bookings</h2>
+
+            <p>
+                Here are the public events you have registered for.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- BOOKING 1 -->
+
+            <div class="col-lg-6">
+
+                <div class="booking-card">
+
+                    <div class="booking-image">
+
+                        <img src="pics/tech.jpg"
+                             alt="Technology Conference">
+
+                    </div>
+
+                    <div class="booking-content">
+
+                        <div class="booking-top">
+
+                            <span class="event-category">
+                                Conference
+                            </span>
+
+                            <span class="status">
+                                ✓ Registered
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Technology Conference 2026
+                        </h3>
+
+                        <p class="event-info">
+                            📅 30 October 2026
+                        </p>
+
+                        <p class="event-info">
+                            ⏰ 10:00 AM
+                        </p>
+
+                        <p class="event-info">
+                            📍 Lahore
+                        </p>
+
+                        <div class="booking-actions">
+
+                            <a href="event-details.html"
+                               class="view-btn">
+                                View Details
+                            </a>
+
+                            <button class="cancel-btn">
+                                Cancel Booking
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOKING 2 -->
+
+            <div class="col-lg-6">
+
+                <div class="booking-card">
+
+                    <div class="booking-image">
+
+                        <img src="pics/workshop.jpg"
+                             alt="Web Development Workshop">
+
+                    </div>
+
+                    <div class="booking-content">
+
+                        <div class="booking-top">
+
+                            <span class="event-category">
+                                Workshop
+                            </span>
+
+                            <span class="status">
+                                ✓ Registered
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Web Development Workshop
+                        </h3>
+
+                        <p class="event-info">
+                            📅 5 November 2026
+                        </p>
+
+                        <p class="event-info">
+                            ⏰ 3:00 PM
+                        </p>
+
+                        <p class="event-info">
+                            📍 Lahore
+                        </p>
+
+                        <div class="booking-actions">
+
+                            <a href="event-details.html"
+                               class="view-btn">
+                                View Details
+                            </a>
+
+                            <button class="cancel-btn">
+                                Cancel Booking
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= EXPLORE MORE ================= -->
+
+        <div class="explore-box">
+
+            <h3>Looking for more events?</h3>
+
+            <p>
+                Explore public events and find something interesting
+                to attend.
+            </p>
+
+            <a href="events.html" class="explore-btn">
+                Explore Public Events
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="eventora-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+                <h3>✦ EVENTORA</h3>
+
+                <p>
+                    Create, manage and experience
+                    memorable events with ease.
+                </p>
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="events.html">Events</a>
+
+                <a href="booking.html">My Bookings</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Eventora. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

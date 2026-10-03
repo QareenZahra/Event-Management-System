@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events | Eventora</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/events.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg eventora-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand eventora-logo" href="index.html">
+            ✦ EVENTORA
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav eventora-links">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="events.html">
+                        Events
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="booking.html">
+                        My Bookings
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+
+            <div class="navbar-buttons">
+
+                <a href="login.html" class="login-btn">
+                    Login
+                </a>
+
+                <a href="register.html" class="register-btn">
+                    Register
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= PAGE HERO ================= -->
+
+<section class="events-hero">
+
+    <div class="container">
+
+        <span class="hero-tag">
+            🌍 PUBLIC EVENTS
+        </span>
+
+        <h1>
+            Explore Public Events
+        </h1>
+
+        <p>
+            Discover exciting events, workshops, conferences and
+            experiences you can join.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EVENTS SECTION ================= -->
+
+<section class="events-section">
+
+    <div class="container">
+
+
+        <!-- Search + Filter -->
+
+        <div class="event-tools">
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    placeholder="Search events..."
+                >
+
+                <button>
+                    🔍
+                </button>
+
+            </div>
+
+
+            <select class="category-filter">
+
+                <option value="">
+                    All Categories
+                </option>
+
+                <option value="conference">
+                    Conference
+                </option>
+
+                <option value="workshop">
+                    Workshop
+                </option>
+
+                <option value="music">
+                    Music
+                </option>
+
+                <option value="seminar">
+                    Seminar
+                </option>
+
+                <option value="business">
+                    Business
+                </option>
+
+                <option value="art">
+                    Art & Culture
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- ================= EVENT CARDS ================= -->
+
+        <div class="row g-4">
+
+
+            <!-- Event 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="event-card">
+
+                    <div class="event-image">
+
+                        <img
+                            src="pics/tech.jpg"
+                            alt="Technology Conference"
+                        >
+
+                        <span class="public-badge">
+                            🌍 Public
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-card-body">
+
+                        <span class="event-category">
+                            Conference
+                        </span>
+
+                        <h3>
+                            Technology Conference 2026
+                        </h3>
+
+                        <p class="event-info">
+                            📅 30 October 2026
+                        </p>
+
+                        <p class="event-info">
+                            ⏰ 10:00 AM
+                        </p>
+
+                        <p class="event-info">
+                            📍 Lahore
+                        </p>
+
+                        <div class="event-footer">
+
+                            <span class="seats">
+                                120 Seats
+                            </span>
+
+                            <a
+                                href="event-details.html"
+                                class="details-btn"
+                            >
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="event-card">
+
+                    <div class="event-image">
+
+                        <img
+                            src="pics/workshop.jpg"
+                            alt="Web Development Workshop"
+                        >
+
+                        <span class="public-badge">
+                            🌍 Public
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-card-body">
+
+                        <span class="event-category">
+                            Workshop
+                        </span>
+
+                        <h3>
+                            Web Development Workshop
+                        </h3>
+
+                        <p class="event-info">
+                            📅 5 November 2026
+                        </p>
+
+                        <p class="event-info">
+                            ⏰ 3:00 PM
+                        </p>
+
+                        <p class="event-info">
+                            📍 Lahore
+                        </p>
+
+                        <div class="event-footer">
+
+                            <span class="seats">
+                                60 Seats
+                            </span>
+
+                            <a
+                                href="event-details.html"
+                                class="details-btn"
+                            >
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="event-card">
+
+                    <div class="event-image">
+
+                        <img
+                            src="pics/music.jpg"
+                            alt="Live Music Evening"
+                        >
+
+                        <span class="public-badge">
+                            🌍 Public
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-card-body">
+
+                        <span class="event-category">
+                            Music
+                        </span>
+
+                        <h3>
+                            Live Music Evening
+                        </h3>
+
+                        <p class="event-info">
+                            📅 12 November 2026
+                        </p>
+
+                        <p class="event-info">
+                            ⏰ 7:00 PM
+                        </p>
+
+                        <p class="event-info">
+                            📍 Lahore
+                        </p>
+
+                        <div class="event-footer">
+
+                            <span class="seats">
+                                200 Seats
+                            </span>
+
+                            <a
+                                href="event-details.html"
+                                class="details-btn"
+                            >
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event 4 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="event-card">
+
+                    <div class="event-image">
+
+                        <img
+                            src="pics/seminar.jpg"
+                            alt="Digital Marketing Seminar"
+                        >
+
+                        <span class="public-badge">
+                            🌍 Public
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-card-body">
+
+                        <span class="event-category">
+                            Seminar
+                        </span>
+
+                        <h3>
+                            Digital Marketing Seminar
+                        </h3>
+
+                        <p class="event-info">
+                            📅 18 November 2026
+                        </p>
+
+                        <p class="event-info">
+                            ⏰ 11:00 AM
+                        </p>
+
+                        <p class="event-info">
+                            📍 Lahore
+                        </p>
+
+                        <div class="event-footer">
+
+                            <span class="seats">
+                                100 Seats
+                            </span>
+
+                            <a
+                                href="event-details.html"
+                                class="details-btn"
+                            >
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event 5 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="event-card">
+
+                    <div class="event-image">
+
+                        <img
+                            src="pics/business.jpg"
+                            alt="Business Meetup"
+                        >
+
+                        <span class="public-badge">
+                            🌍 Public
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-card-body">
+
+                        <span class="event-category">
+                            Business
+                        </span>
+
+                        <h3>
+                            Entrepreneurs Meetup
+                        </h3>
+
+                        <p class="event-info">
+                            📅 22 November 2026
+                        </p>
+
+                        <p class="event-info">
+                            ⏰ 4:00 PM
+                        </p>
+
+                        <p class="event-info">
+                            📍 Lahore
+                        </p>
+
+                        <div class="event-footer">
+
+                            <span class="seats">
+                                80 Seats
+                            </span>
+
+                            <a
+                                href="event-details.html"
+                                class="details-btn"
+                            >
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Event 6 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="event-card">
+
+                    <div class="event-image">
+
+                        <img
+                            src="pics/art.jpg"
+                            alt="Art Workshop"
+                        >
+
+                        <span class="public-badge">
+                            🌍 Public
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-card-body">
+
+                        <span class="event-category">
+                            Art & Culture
+                        </span>
+
+                        <h3>
+                            Creative Art Workshop
+                        </h3>
+
+                        <p class="event-info">
+                            📅 28 November 2026
+                        </p>
+
+                        <p class="event-info">
+                            ⏰ 2:00 PM
+                        </p>
+
+                        <p class="event-info">
+                            📍 Lahore
+                        </p>
+
+                        <div class="event-footer">
+
+                            <span class="seats">
+                                50 Seats
+                            </span>
+
+                            <a
+                                href="event-details.html"
+                                class="details-btn"
+                            >
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="events-cta">
+
+    <div class="container">
+
+        <h2>
+            Planning Your Own Event?
+        </h2>
+
+        <p>
+            Create your event and manage your guests with Eventora.
+        </p>
+
+        <a
+            href="create-event.html"
+            class="cta-btn"
+        >
+            Create Your Event
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="eventora-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+
+                <h3>
+                    ✦ EVENTORA
+                </h3>
+
+                <p>
+                    Your events. Your moments. Your way.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="events.html">Events</a>
+
+                <a href="about.html">About</a>
+
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Eventora. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

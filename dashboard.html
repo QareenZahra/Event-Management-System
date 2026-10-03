@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Eventora</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS/dashboard.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg eventora-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand eventora-logo" href="index.html">
+            ✦ EVENTORA
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav eventora-links">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="events.html">
+                        Events
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="booking.html">
+                        My Bookings
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="dashboard.html">
+                        Dashboard
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        About
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="navbar-buttons">
+
+                <a href="login.html" class="login-btn">
+                    Logout
+                </a>
+
+                <a href="create-event.html" class="register-btn">
+                    + Create Event
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= DASHBOARD HEADER ================= -->
+
+<section class="dashboard-header">
+
+    <div class="container">
+
+        <div class="welcome-area">
+
+            <div>
+
+                <span class="section-tag">
+                    ORGANIZER DASHBOARD
+                </span>
+
+                <h1>Welcome to Your Dashboard</h1>
+
+                <p>
+                    Create, manage and monitor your events from one place.
+                </p>
+
+            </div>
+
+            <a href="create-event.html" class="create-btn">
+                + Create New Event
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATISTICS ================= -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📅
+                    </div>
+
+                    <div>
+                        <h3>4</h3>
+                        <p>Total Events</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🌍
+                    </div>
+
+                    <div>
+                        <h3>3</h3>
+                        <p>Public Events</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🔒
+                    </div>
+
+                    <div>
+                        <h3>1</h3>
+                        <p>Private Events</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+                        <h3>86</h3>
+                        <p>Total Registrations</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MY EVENTS ================= -->
+
+<section class="my-events-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-tag">
+                    EVENT MANAGEMENT
+                </span>
+
+                <h2>My Events</h2>
+
+                <p>
+                    Manage the events you have created.
+                </p>
+
+            </div>
+
+            <a href="create-event.html" class="small-create-btn">
+                + Create Event
+            </a>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table class="event-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Event</th>
+                        <th>Date</th>
+                        <th>Visibility</th>
+                        <th>Registrations</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <!-- EVENT 1 -->
+
+                    <tr>
+
+                        <td>
+                            <div class="event-name">
+
+                                <div class="event-mini-icon">
+                                    💻
+                                </div>
+
+                                <div>
+                                    <strong>
+                                        Technology Conference
+                                    </strong>
+
+                                    <small>
+                                        Conference
+                                    </small>
+                                </div>
+
+                            </div>
+                        </td>
+
+                        <td>
+                            30 Oct 2026
+                        </td>
+
+                        <td>
+                            <span class="public-badge">
+                                🌍 Public
+                            </span>
+                        </td>
+
+                        <td>
+                            42 / 120
+                        </td>
+
+                        <td>
+                            <span class="active-badge">
+                                Active
+                            </span>
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <a href="event-details.html"
+                                   class="view-action">
+                                    View
+                                </a>
+
+                                <button class="edit-action">
+                                    Edit
+                                </button>
+
+                                <button class="delete-action">
+                                    Delete
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- EVENT 2 -->
+
+                    <tr>
+
+                        <td>
+
+                            <div class="event-name">
+
+                                <div class="event-mini-icon">
+                                    🎂
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Sarah's Birthday
+                                    </strong>
+
+                                    <small>
+                                        Birthday
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            15 Nov 2026
+                        </td>
+
+                        <td>
+
+                            <span class="private-badge">
+                                🔒 Private
+                            </span>
+
+                        </td>
+
+                        <td>
+                            18 / 30
+                        </td>
+
+                        <td>
+
+                            <span class="active-badge">
+                                Active
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <a href="event-details.html"
+                                   class="view-action">
+                                    View
+                                </a>
+
+                                <button class="edit-action">
+                                    Edit
+                                </button>
+
+                                <button class="delete-action">
+                                    Delete
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- EVENT 3 -->
+
+                    <tr>
+
+                        <td>
+
+                            <div class="event-name">
+
+                                <div class="event-mini-icon">
+                                    🎵
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Live Music Evening
+                                    </strong>
+
+                                    <small>
+                                        Music
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            12 Nov 2026
+                        </td>
+
+                        <td>
+
+                            <span class="public-badge">
+                                🌍 Public
+                            </span>
+
+                        </td>
+
+                        <td>
+                            26 / 200
+                        </td>
+
+                        <td>
+
+                            <span class="active-badge">
+                                Active
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <div class="action-buttons">
+
+                                <a href="event-details.html"
+                                   class="view-action">
+                                    View
+                                </a>
+
+                                <button class="edit-action">
+                                    Edit
+                                </button>
+
+                                <button class="delete-action">
+                                    Delete
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK ACTIONS ================= -->
+
+<section class="quick-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                QUICK ACTIONS
+            </span>
+
+            <h2>Manage Your Events</h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="quick-card">
+
+                    <div class="quick-icon">
+                        ✨
+                    </div>
+
+                    <h3>Create Event</h3>
+
+                    <p>
+                        Create a new wedding, birthday,
+                        conference or any special event.
+                    </p>
+
+                    <a href="create-event.html">
+                        Create Event →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="quick-card">
+
+                    <div class="quick-icon">
+                        👥
+                    </div>
+
+                    <h3>Manage Guests</h3>
+
+                    <p>
+                        View registered guests and manage
+                        event registrations.
+                    </p>
+
+                    <a href="#">
+                        View Registrations →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="quick-card">
+
+                    <div class="quick-icon">
+                        📊
+                    </div>
+
+                    <h3>Event Overview</h3>
+
+                    <p>
+                        Monitor your event details,
+                        capacity and registration status.
+                    </p>
+
+                    <a href="#">
+                        View Overview →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="eventora-footer">
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>✦ EVENTORA</h3>
+
+                <p>
+                    Create, manage and experience
+                    memorable events with ease.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="booking.html">My Bookings</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Eventora. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
