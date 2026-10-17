@@ -1,0 +1,197 @@
+# ✦ Eventora
+
+**Create. Manage. Celebrate.**
+
+Eventora is a PHP and MySQL event management website. Anyone can browse public events. Registered users can create public or private events, book seats, and manage guests from their own dashboard. An admin panel lets the website owner control users, events, bookings and the content of the site itself.
+
+---
+
+## Features
+
+### For visitors
+- Landing page with an image slider, upcoming public events, categories and a "How it works" section.
+- Browse and search public events.
+- Register and log in.
+
+### For logged-in users
+- **Dashboard** with live counters, upcoming bookings, upcoming events and suggested events.
+- **Create events** as public or private.
+- **Edit events** (title, category, date, time, location, capacity, visibility, description). Only the owner or an admin can edit, and capacity cannot go below the seats already confirmed.
+- **Booking requests:** a new booking starts as **Pending**. The event owner accepts or rejects it, and the user then sees **Confirmed** or **Rejected**. Seat capacity is checked when a booking is requested and again when it is accepted.
+- **Private events:** a secret share token is created automatically with the event. Only the owner or people with the link can open it; an empty token never matches.
+- **My Bookings page:** see all your bookings and their status, cancel a booking, and manage the events you created (accept or reject requests, share link, edit, delete).
+- **Profile page:** update name, email and password.
+
+### For admins
+- **Overview:** totals for users, events and bookings.
+- **Users:** search, make or remove admin, delete a user (with their events and bookings).
+- **Events:** search, filter public or private, delete, and an **+ Add Event** shortcut.
+- **Bookings:** search, filter by status, approve or cancel.
+- **Site Settings:** change the website name, home page heading and text, dashboard welcome text, footer text and copyright line, without touching the code.
+- **Slider:** upload, reorder and remove the home page slider images.
+
+---
+
+## Tech stack
+
+| Part | Technology |
+|------|------------|
+| Backend | PHP 8 (PDO, prepared statements) |
+| Database | MySQL / MariaDB |
+| Frontend | HTML, CSS, JavaScript, Bootstrap 5.3 |
+| Local server | XAMPP (Apache + MySQL) |
+
+---
+
+## Project structure
+
+```
+eventora/
+├── index.php            Public landing page (logged-in users go to the dashboard)
+├── dashboard.php        User dashboard
+├── admin.php            Admin panel (admins only)
+├── profile.php          Edit profile and change password
+├── events.php           Browse public events
+├── event-details.php    Event page and booking request
+├── create-event.php     Create an event
+├── edit-event.php       Edit an event (owner or admin)
+├── booking.php          My bookings, booking requests, events I created
+├── login.php            Login (admins go to admin.php, others to dashboard.php)
+├── register.php         Sign up
+├── logout.php           Log out
+├── includes/
+│   ├── db.php           Database connection
+│   ├── functions.php    Sessions, CSRF, flash messages, helpers
+│   ├── header.php       Navbar, CSS links, site settings helpers
+│   ├── footer.php       Footer
+│   └── event_card.php   Reusable event card
+├── CSS/
+│   ├── index.css        Main theme (pink palette) loaded on every page
+│   ├── common.css       Shared styles loaded on every page
+│   └── <page>.css       Optional page styles (home, login, register, events, ...),
+│                        loaded automatically when a file matches the page name
+├── sql/
+│   └── eventora.sql     Full schema and base data (the extra SQL below is already included)
+└── pics/
+    ├── (default slider and event images)
+    ├── uploads/         Event cover images (created automatically on first upload)
+    └── slides/          Slider images uploaded from the admin panel (created automatically)
+```
+
+---
+
+## Installation (XAMPP on Windows)
+
+1. **Install XAMPP** and start **Apache** and **MySQL** from the XAMPP Control Panel.
+2. **Copy the project** to `C:\xampp\htdocs\eventora`.
+3. **Create the database.** Open `http://localhost/phpmyadmin`, create a database (use the name set in `includes/db.php`) and import `sql/eventora.sql`.
+4. **Check the database settings** (host, database name, user, password) in `includes/db.php`.
+5. **Extra SQL:** `sql/eventora.sql` already contains everything. Run the section below only if you started from an older base schema.
+6. **Create the first admin** (see below).
+7. Open **http://localhost/eventora/**.
+
+### Extra SQL (run once in phpMyAdmin, SQL tab)
+
+```sql
+-- user roles
+ALTER TABLE users ADD COLUMN role ENUM('user','admin') NOT NULL DEFAULT 'user';
+
+-- private event share link
+ALTER TABLE events ADD COLUMN share_token VARCHAR(64) NULL;
+
+-- booking approval flow
+ALTER TABLE bookings
+  MODIFY status ENUM('pending','confirmed','rejected','cancelled') NOT NULL DEFAULT 'pending';
+
+-- editable site content
+CREATE TABLE IF NOT EXISTS settings (
+  setting_key VARCHAR(50) NOT NULL PRIMARY KEY,
+  setting_value TEXT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- home page slider
+CREATE TABLE IF NOT EXISTS slides (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  image VARCHAR(255) NOT NULL,
+  sort_order INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- the three default slider images (run this line only once)
+INSERT INTO slides (image, sort_order) VALUES
+('pics/Slider 1.jpg',1),('pics/Sliderr 2.jpg',2),('pics/Slider 3.jpg',3);
+```
+
+If a command says a column already exists, that part was done before and you can skip it.
+
+### Create the first admin
+
+1. Register a normal account on the website.
+2. In phpMyAdmin run:
+   ```sql
+   UPDATE users SET role='admin' WHERE email='your-email@example.com';
+   ```
+3. Log in. You will land on the admin panel and see an **Admin** link in the navbar.
+
+Passwords are stored hashed (`password_hash`), so never type a plain password into the `users` table. Create accounts through the Register page. There is no built-in demo admin password: always create the admin with the steps above.
+
+> **File names:** all PHP files use lowercase names (`admin.php`, `profile.php`) so the site also works on case-sensitive Linux servers.
+
+---
+
+## Main tables
+
+| Table | Important columns |
+|-------|-------------------|
+| `users` | `id`, `name`, `email`, `password` (hash), `role` (`user` or `admin`) |
+| `events` | `id`, `user_id` (owner), `title`, `event_date`, `event_time`, `location`, `image`, `capacity`, `visibility` (`public` or `private`), `share_token` |
+| `bookings` | `id`, `user_id`, `event_id`, `seats`, `status` (`pending`, `confirmed`, `rejected`, `cancelled`); one row per user per event (`uniq_booking`) |
+| `settings` | `setting_key`, `setting_value` (website name, hero text, footer text, ...) |
+| `slides` | `id`, `image`, `sort_order` |
+
+Your own `events` table may have a few more columns (for example description and category). Those come from your base schema.
+
+---
+
+## How booking works
+
+```
+User requests a booking  ->  Pending
+Owner accepts            ->  Confirmed   (only if seats are still available)
+Owner rejects            ->  Rejected
+User cancels             ->  Cancelled
+```
+
+A user who cancelled or was rejected can request the same event again. The existing row is set back to Pending, which keeps the one-row-per-user-per-event rule.
+
+---
+
+## Security notes
+
+- All database queries use PDO prepared statements.
+- Every form is protected with a CSRF token, and output is escaped.
+- The admin check always reads the role from the database, not from the session.
+- Admins cannot delete themselves or remove their own admin rights.
+- Slider uploads accept only real JPG, PNG or WEBP images up to 5 MB, stored under random file names.
+- Private events open only for the owner or for someone with the correct share token (compared with `hash_equals`; an empty token is always rejected).
+- Event images are uploaded to `pics/uploads/` (created automatically) and the upload result is checked.
+- Admin booking approval uses the same seat-capacity check as the owner's accept.
+
+Before putting the site online: use HTTPS, set a strong database password, turn off PHP error display, and do not keep test accounts with weak passwords.
+
+---
+
+## Troubleshooting
+
+| Problem | Fix |
+|---------|-----|
+| `Unknown column 'share_token'` or `'role'` | The extra SQL was not run on the right database. |
+| `Duplicate entry ... for key 'uniq_booking'` | Use the latest `event-details.php`, which reuses an old booking row. |
+| Site or admin tabs show "One-time setup needed" | Create the `settings` and `slides` tables (see Extra SQL). |
+| Styles do not change | The site loads `CSS/index.css` and `CSS/common.css`. Edit those files and press `Ctrl + F5`. |
+| Slider upload fails | Check the file type and size, and the `upload_max_filesize` value in `php.ini`. |
+
+---
+
+## Author
+
+Built by **Qareen Zahra** as a web development project.
